@@ -26,7 +26,7 @@ jobs:
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-    - name: Tech To Bangla RDP.
+    - name: Nkay RDP.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
@@ -35,9 +35,9 @@ jobs:
         copy wallpaper.bat D:\a\wallpaper.bat
         copy Node.js.lnk C:\Users\Public\Desktop\Node.js.lnk
         copy "Visual Studio 2019.lnk" "C:\Users\Public\Desktop\Visual Studio 2019.lnk"
-    - name: Membuat Tunnel.
+    - name: Creating Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp --region ap 3389"'
-    - name: Connect Ke RDP Kamu CPU 2 Core - 7GB Ram - 256 SSD.
+    - name: Connect To RDP  CPU 2 Core - 7GB Ram - 256 SSD.
       run: cmd /c start.bat
-    - name: Berhasil Dibuat! Anda Bisa Menutup Tab Sekarang.
+    - name: Made Successfully!  You Can Close Tab Now.
       run: cmd /c loop.bat
